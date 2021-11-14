@@ -1,14 +1,32 @@
-import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { React, useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../frontend/src/welcome/Welcome.css'
 import { Person, EmailOutlined, ArrowBack, VpnKey, EmailSharp } from '@material-ui/icons/';
 import axios from 'axios';
 import { validate } from 'react-email-validator';
+import Pusher from 'pusher-js';
 
 function Welcome() {
   const [isStartedBtnClicked, setStartedBtnClicked] = useState(false);
+  
+  const navigate = useNavigate()
 
+  useEffect(() => {
+    //redirect if login
+
+    const isLogin = JSON.parse(localStorage.getItem('SOM')) != null ? true : false;
+    if (isLogin) {
+      if (JSON.parse(localStorage.getItem('SOM')).login !== false) {
+        setTimeout(() => {
+          navigate("/Homepage")
+        }, 1000);
+      } else {
+        navigate("/")
+      }   
+    } 
+  }, [])
+  
   //welcome component
   const WelcomeText = () => {
     const loadSignupComp = () => {
@@ -82,6 +100,19 @@ function Welcome() {
       }
     }
     
+    //track the jwt after registration
+    var pusher = new Pusher('079f21a2e193a4635116', {
+      cluster: 'ap2'
+    });
+
+    var channel = pusher.subscribe('jwt');
+    channel.bind('created', function (data) {
+      localStorage.setItem("SOM", JSON.stringify({
+        token: data.message,
+        login:true
+      }))
+    });
+    
     //handling onchange error due to the use of useRef 
     const change = (e) => {
       if (e.target.name === "uname") {
@@ -92,7 +123,6 @@ function Welcome() {
         setPassword(e.target.value)
       }
     }
-    console.log(uname, email, password)
     
     return (
       <>

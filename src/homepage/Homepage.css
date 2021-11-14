@@ -1,0 +1,11 @@
+.postContainer{
+ padding-left: 38px;
+ padding-right: 50px;
+ padding-top: 30px;
+ padding-bottom: 30px;
+}
+
+.card{
+ height: 250px;
+ width: 180px;
+}

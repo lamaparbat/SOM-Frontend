@@ -1,0 +1,19 @@
+.main_container{
+height: 80vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.form{
+  padding: 50px;
+  background-color: rgb(255, 234, 234);
+}
+.form div{
+  width: 100%;
+}
+
+@media(max-width:1100px){
+.form h5{
+ font-size: 18px;
+}
+} 

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Zen+Maru+Gothic&display=swap');
 
 .navbar{
- padding: 10px;
+ padding: 0px;
+ border-bottom: 0.4px solid rgb(224, 224, 224);
 }
 
 .navbar span{
@@ -10,6 +11,24 @@ font-size: 20px;
 }
 .navbar button{
 font-size: 14px;
+outline-style: none;
+}
+.navbar button:hover{
+ border-radius: 4px;
+ background-color: rgb(229, 234, 236);
+}
+.navbar div ul{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: -12px;
+  top:45px;
+  width: 100px;
+  position: absolute;
+  border-top-right-radius: 15px;
+  background-color: rgb(230, 237, 240);
+ list-style: none;
 }
 
 .container .row{
@@ -41,17 +60,17 @@ width: fit-content;
 .banner .row .col-sm-4 .para{
  font-size: 14px;
 }
-.banner .row .col-sm-4 .emailInput{
+.emailInput{
  width: 70%;
  border: 0.2px solid rgb(231, 231, 231);
 }
-.banner .row .col-sm-4 .btn{
+ .btn{
  font-size: 14px;
 }
-.banner .row .col-sm-4 #arrowback{
+ #arrowback{
  cursor: pointer;
 }
-.banner .row .col-sm-4 #arrowback:hover{
+ #arrowback:hover{
  opacity: 0.7;
 }
 
