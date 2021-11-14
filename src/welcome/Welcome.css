@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Zen+Maru+Gothic&display=swap');
+
+.navbar{
+ padding: 10px;
+}
+
+.navbar span{
+margin-left: 50px;
+font-size: 20px;
+}
+.navbar button{
+font-size: 14px;
+}
+
+.container .row{
+ font-family: 'Dosis', sans-serif;
+font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.banner{
+  margin-top: 50px;
+}
+
+.banner .row .col-sm-5{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.banner .row .col-sm-4 {
+display: flex;
+flex-direction: column;
+align-items: center;
+box-shadow: -1px 2px 9px 0px rgba(212,212,212,0.75);
+-webkit-box-shadow: -1px 2px 9px 0px rgba(212,212,212,0.75);
+-moz-box-shadow: -1px 2px 9px 0px rgba(212,212,212,0.75);
+}
+
+.banner .row .col-sm-4 button {
+width: fit-content;
+}
+.banner .row .col-sm-4 .para{
+ font-size: 14px;
+}
+.banner .row .col-sm-4 .emailInput{
+ width: 70%;
+ border: 0.2px solid rgb(231, 231, 231);
+}
+.banner .row .col-sm-4 .btn{
+ font-size: 14px;
+}
+.banner .row .col-sm-4 #arrowback{
+ cursor: pointer;
+}
+.banner .row .col-sm-4 #arrowback:hover{
+ opacity: 0.7;
+}
+
+.footer{
+font-family: 'Dosis', sans-serif;
+font-family: 'Zen Maru Gothic', sans-serif;
+display: flex;
+justify-content: center;
+}
+.footer a{
+ margin-left: 50px;
+ margin-top: 150px;
+ text-decoration: none;
+ color:black;
+}
+.footer a:hover{
+ text-decoration: underline;
+}
+
+
+/* responsive view using media query */
+@media (max-width: 1100px){
+ .navbar{
+  padding: 0;
+ }
+  .navbar span{
+    margin-left: 25px;
+  }
+  .navbar button{
+  margin-right: 30px;
+  }
+  .banner .row .col-sm-4 {
+  box-shadow: none;
+  }
+ .footer{
+  display: inline-flex;
+ }
+ .footer a{
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 150px;
+ }
+}
