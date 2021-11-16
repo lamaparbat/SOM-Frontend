@@ -1,0 +1,21 @@
+.featuredContainer .row .col-sm-10 .cardRows{
+ flex-direction: row;
+}
+.featuredContainer .row .col-sm-10 .cardRows .loadIcon{
+ display: flex;
+}
+.featuredContainer .row .col-sm-10 .loadIcon2{
+ display: none;
+}
+
+@media (max-width:1100px) {
+ .featuredContainer .row .col-sm-10 .cardRows{
+ flex-direction: column;
+}
+.featuredContainer .row .col-sm-10 .cardRows .loadIcon{
+ display: none;
+}
+.featuredContainer .row .col-sm-10 .loadIcon2{
+ display: inline;
+}
+}

@@ -1,23 +1,23 @@
 import React from 'react';
 import Card from './Card';
-import { ArrowDropDownCircleOutlined} from '@material-ui/icons'
+import '../category/cardRows.css';
+import { ArrowDropDownCircleOutlined } from '@material-ui/icons'
 
-function New() {
+function Romance() {
  return (
-  <div className="container py-3 featuredContainer">
+  <div className="container py-3 featuredContainer bg-">
    <div className="row">
     <div className="col-sm-1"></div>
     <div className="col-sm-10  bg-">
      <h5 className="mx-1">
-      <b>New Stories</b>
+      <b>Romance Stories</b>
       <ArrowDropDownCircleOutlined className="text-secondary loadIcon2"
-       style={{
-        fontSize: "30px",
-        transform: "rotate(270deg)",
-        marginLeft:"100px",
-        cursor: "pointer"
-       }} />
-     </h5>
+      style={{
+       fontSize: "30px",
+       transform: "rotate(270deg)",
+       marginLeft: "60px",
+       cursor: "pointer"
+      }} /></h5>
      <div className="d-flex cardRows">
       <Card img={""} id={2} />
       <Card img={""} id={2} />
@@ -29,8 +29,8 @@ function New() {
         style={{
          fontSize: "40px",
          transform: "rotate(270deg)",
-         position:"relative",
-         left:"50px",
+         position: "relative",
+         left: "50px",
          cursor: "pointer"
         }} />
       </div>
@@ -42,4 +42,4 @@ function New() {
  )
 }
 
-export default New
+export default Romance

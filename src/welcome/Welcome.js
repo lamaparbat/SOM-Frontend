@@ -17,7 +17,7 @@ function Welcome() {
 
     const isLogin = JSON.parse(localStorage.getItem('SOM')) != null ? true : false;
     if (isLogin) {
-      if (JSON.parse(localStorage.getItem('SOM')).login !== false) {
+      if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
         setTimeout(() => {
           navigate("/Homepage")
         }, 1000);
@@ -83,13 +83,9 @@ function Welcome() {
               setUname("");
               setEmail("");
               setPassword("");
+              console.log(res.message)
             }
           })
-          setResult("Created Successfully.");
-          setColor("success")
-          setTimeout(() => {
-            document.querySelector(".homelink").click();
-          }, 900);
         } else {
           setResult("Invalid email format !!");
           setColor("danger");
@@ -109,7 +105,9 @@ function Welcome() {
     channel.bind('created', function (data) {
       localStorage.setItem("SOM", JSON.stringify({
         token: data.message,
-        login:true
+        uname: uname,
+        email:email,
+        check:true
       }))
     });
     

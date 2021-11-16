@@ -11,7 +11,7 @@ function Login() {
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
  const [result, setResult] = useState("");
- const [color, setColor] = useState("success");
+  const [color, setColor] = useState("success");
  
  
  const navigate = useNavigate()
@@ -21,7 +21,7 @@ function Login() {
   //redirect if login
   const isLogin = JSON.parse(localStorage.getItem('SOM')) != null ? true : false;
   if (isLogin) {
-    if (JSON.parse(localStorage.getItem('SOM')).login !== false) {
+    if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
       navigate("/Homepage")
     } else {
       navigate("/Login")
@@ -46,12 +46,9 @@ function Login() {
    }).then((res) => {
     if (res.data.check) {
      //localstorage set online statUS
-     console.log("json ",JSON.parse(localStorage.getItem('SOM')).login === false);
-      if (JSON.parse(localStorage.getItem('SOM')).login === false) {
-      localStorage.setItem("SOM", JSON.stringify({
-       token: res.data.token,
-       online: true
-      }))
+     console.log("json ",JSON.parse(localStorage.getItem('SOM')).check === false);
+      if (JSON.parse(localStorage.getItem('SOM')).check === false) {
+        localStorage.setItem("SOM", JSON.stringify(res.data))
       setResult("Login Successfull !!");
       setColor("success")
       setTimeout(() => {

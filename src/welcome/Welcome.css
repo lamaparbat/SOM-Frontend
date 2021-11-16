@@ -12,10 +12,10 @@ font-size: 20px;
 .navbar button{
 font-size: 14px;
 outline-style: none;
+border-radius: 20px;
 }
 .navbar button:hover{
- border-radius: 4px;
- background-color: rgb(229, 234, 236);
+  background-color: rgb(243, 239, 239);
 }
 .navbar div ul{
   padding-top: 10px;
@@ -23,13 +23,25 @@ outline-style: none;
   padding-left: 10px;
   padding-right: 10px;
   margin-left: -12px;
-  top:45px;
+  top:61px;
   width: 100px;
   position: absolute;
   border-top-right-radius: 15px;
   background-color: rgb(230, 237, 240);
- list-style: none;
+  list-style: none;
+box-shadow: 1px 0px 7px 0px rgba(215,215,215,0.75);
+-webkit-box-shadow: 1px 0px 7px 0px rgba(215,215,215,0.75);
+-moz-box-shadow: 1px 0px 7px 0px rgba(215,215,215,0.75);
 }
+.navbar div ul li:hover{
+ background-color: rgb(243, 239, 239);
+ border-radius: 10px;
+}
+.navbar .account:hover{
+ background-color: rgb(243, 239, 239);
+ border-radius: 20px;
+ cursor: pointer;
+} 
 
 .container .row{
  font-family: 'Dosis', sans-serif;

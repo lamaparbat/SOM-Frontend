@@ -1,11 +1,27 @@
 .postContainer{
+ height: 93vh;
  padding-left: 38px;
  padding-right: 50px;
  padding-top: 30px;
  padding-bottom: 30px;
+ overflow-y: scroll;
+}
+.postContainer::-webkit-scrollbar{
+  display: none;
 }
 
 .card{
  height: 250px;
  width: 180px;
+ cursor: pointer;
+ box-shadow: 1px 0px 7px 0px rgba(233,211,211,0.75);
+-webkit-box-shadow: 1px 0px 7px 0px rgba(233,211,211,0.75);
+-moz-box-shadow: 1px 0px 7px 0px rgba(233,211,211,0.75);
+}
+
+@media (max-width:1100px){
+.card{
+ height: 250px;
+ width: 100%;
+}
 }

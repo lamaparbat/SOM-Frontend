@@ -1,20 +1,20 @@
 import React from 'react';
 import Card from './Card';
-import { ArrowDropDownCircleOutlined} from '@material-ui/icons'
+import { ArrowDropDownCircleOutlined } from '@material-ui/icons'
 
-function New() {
+function Scifi() {
  return (
-  <div className="container py-3 featuredContainer">
+  <div className="container py-3 featuredContainer bg-">
    <div className="row">
     <div className="col-sm-1"></div>
     <div className="col-sm-10  bg-">
      <h5 className="mx-1">
-      <b>New Stories</b>
+      <b>Science Fiction Stories</b>
       <ArrowDropDownCircleOutlined className="text-secondary loadIcon2"
        style={{
         fontSize: "30px",
         transform: "rotate(270deg)",
-        marginLeft:"100px",
+        marginLeft: "8px",
         cursor: "pointer"
        }} />
      </h5>
@@ -24,13 +24,13 @@ function New() {
       <Card img={""} id={2} />
       <Card img={""} id={2} />
       <Card img={""} id={2} />
-      <div className="align-items-center loadIcon">
+      <div className="loadIcon align-items-center">
        <ArrowDropDownCircleOutlined className="text-secondary"
         style={{
          fontSize: "40px",
          transform: "rotate(270deg)",
-         position:"relative",
-         left:"50px",
+         position: "relative",
+         left: "50px",
          cursor: "pointer"
         }} />
       </div>
@@ -42,4 +42,4 @@ function New() {
  )
 }
 
-export default New
+export default Scifi
