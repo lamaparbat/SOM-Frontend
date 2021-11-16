@@ -40,7 +40,7 @@ function Login() {
  
  const login = () => {
   if (email && password && validate(email)) {
-    axios.post("https://git.heroku.com/ted-story.git/login", {
+    axios.post("https://ted-story.herokuapp.com/login", {
     email: email,
     password:password
    }).then((res) => {
