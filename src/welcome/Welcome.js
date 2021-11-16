@@ -76,7 +76,7 @@ function Welcome() {
             password: password,
             type: ""
           }
-          axios.post('http://localhost:5000/createAccount', formData).then((res, err) => {
+          axios.post('https://git.heroku.com/ted-story.git/createAccount', formData).then((res, err) => {
             if (err) {
               console.log(err)
             } else {

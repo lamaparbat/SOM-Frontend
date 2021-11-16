@@ -41,7 +41,7 @@ function CreateStories() {
   let category = document.getElementById("category").value;
   let language = document.getElementById("language").value;
   //sending data to server
-  axios.post("http://localhost:5000/uploadProject", {
+  axios.post("https://git.heroku.com/ted-story.git/uploadProject", {
    title: title,
    description: description,
    img: "",
