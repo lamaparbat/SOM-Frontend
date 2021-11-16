@@ -13,11 +13,13 @@ function App() {
   useEffect(() => {
     //redirect if login
     const isLogin = JSON.parse(localStorage.getItem('SOM')) != null ? true : false;
-    if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
-      // navigate("/Homepage")
-      const token = JSON.parse(localStorage.getItem("SOM")).token;
-    } else {
-      navigate("/")
+    if (isLogin) {
+      if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
+        // navigate("/Homepage")
+        const token = JSON.parse(localStorage.getItem("SOM")).token;
+      } else {
+        navigate("/")
+      }
     }
   }, [])
   return (

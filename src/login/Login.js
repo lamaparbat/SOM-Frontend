@@ -46,16 +46,16 @@ function Login() {
    }).then((res) => {
     if (res.data.check) {
      //localstorage set online statUS
-     console.log("json ",JSON.parse(localStorage.getItem('SOM')).check === false);
-      if (JSON.parse(localStorage.getItem('SOM')).check === false) {
+      console.log(JSON.parse(localStorage.getItem('SOM')))
+      if (JSON.parse(localStorage.getItem('SOM')) === null ? true : false) {
         localStorage.setItem("SOM", JSON.stringify(res.data))
-      setResult("Login Successfull !!");
-      setColor("success")
-      setTimeout(() => {
-        navigate("/Homepage")
-        window.location.assign("/")
-      }, 1000);
-     }
+        setResult("Login Successfull !!");
+        setColor("success")
+        setTimeout(() => {
+          navigate("/Homepage")
+          window.location.assign("/")
+        }, 1000);
+      }
     } else {
      setResult("Wrong email or password !!");
      setColor("danger")

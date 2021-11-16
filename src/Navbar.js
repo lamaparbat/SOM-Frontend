@@ -28,13 +28,15 @@ const Navbar = () => {
   const navigate = useNavigate()
   useEffect(() => {
     //redirect if login
-    console.log(JSON.parse(localStorage.getItem('SOM')).check)
-    setIsLogin(JSON.parse(localStorage.getItem('SOM')).check != false ? true : false);
-    if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
-      setUserData(JSON.parse(localStorage.getItem('SOM')));
-      navigate("/Homepage")
-    } else {
-      navigate("/")
+    const isLogin = JSON.parse(localStorage.getItem('SOM')) != null ? true : false;
+    setIsLogin(isLogin ? JSON.parse(localStorage.getItem('SOM')).check != false ? true : false : null);
+    if (isLogin) {
+      if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
+        setUserData(JSON.parse(localStorage.getItem('SOM')));
+        navigate("/Homepage")
+      } else {
+        navigate("/")
+      }
     }
   }, [loginChange])
 
