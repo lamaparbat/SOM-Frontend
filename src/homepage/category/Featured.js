@@ -1,6 +1,6 @@
-import { ArrowDropDownCircleOutlined } from '@material-ui/icons'
-import React from 'react'
-import Card from './Card'
+import { ArrowDropDownCircleOutlined } from '@material-ui/icons';
+import React from 'react';
+import Card from './Card';
 
 function Featured() {
  return (

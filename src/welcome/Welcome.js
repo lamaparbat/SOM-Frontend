@@ -9,6 +9,8 @@ import Pusher from 'pusher-js';
 
 function Welcome() {
   const [isStartedBtnClicked, setStartedBtnClicked] = useState(false);
+  const [result, setResult] = useState(false);
+  
   
   const navigate = useNavigate()
 
@@ -76,23 +78,22 @@ function Welcome() {
             password: password,
             type: ""
           }
-          axios.post('https://ted-story.herokuapp.com/createAccount', formData).then((res, err) => {
+          //https://ted-story.herokuapp.com/createAccount
+          axios.post('https://ted-story.web.app/createAccount', formData).then((res, err) => {
             if (err) {
               console.log(err)
             } else {
               setUname("");
               setEmail("");
               setPassword("");
-              console.log(res.message)
+              setResult(true)
+              setTimeout(() => {
+                navigate("/Login");
+              }, 1000);
+              console.log(res.data.message);
             }
           })
-        } else {
-          setResult("Invalid email format !!");
-          setColor("danger");
         }
-      } else {
-        setResult("please fillup all the form value !!")
-        setColor("danger")
       }
     }
     
@@ -146,6 +147,7 @@ function Welcome() {
             </div><br />
             <span className={"mb-2 text-" + color}>{result}</span>
             <Link className="homelink d-none" to="/Homepage" />
+            <span className={result ? "d-flex text-success" : "d-none text-danger"}>{result ? "Registered Successfull !!" : "Registration failed !!"}</span>
             <button type="button" className="btn form-control btn-danger py-2 px-5 font-monospace shadow-none rounded-0 text-whitesmoke" style={{ width:"290px"}} onClick={createAccount}> CREATE A NEW ACCOUNT </button><br />
             <span> --- OR ---</span><br/>
             <button className="btn form-control btn-danger py-2 px-5 font-monospace shadow-none rounded-0 text-whitesmoke" onClick={createAccount}><EmailOutlined style={{marginTop:"-2px"}} />&nbsp; SIGNUP WITH GOOGLE </button><br />

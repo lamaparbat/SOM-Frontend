@@ -1,0 +1,35 @@
+
+.selectedStory{
+  height: fit-content;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.selectedStory .row .col-sm-10{
+ padding: 10px;
+ display: flex;
+}
+.selectedStory .row .col-sm-10 img{
+  margin-right:15px;
+  height: 300px;
+  width: 200px;
+}
+.selectedStory .row .col-sm-10 .cardDesc{
+ padding-top: 20px;
+}
+.selectedStory .row .col-sm-10 .cardDesc h4{
+font-family: arial;
+font-weight: bold;
+}
+.selectedStory .row .col-sm-10 .cardDesc div div span{
+ font-size: 12px;
+}
+.selectedStory .row .col-sm-10 .cardDesc div div #no{
+ margin-top: -10px;
+}
+
+@media(max-width:1100px){
+.selectedStory .row .col-sm-10 img{
+  height: 100%;
+  width: 100%;
+}
+}

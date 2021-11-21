@@ -5,6 +5,7 @@ import Welcome from "./welcome/Welcome";
 import Homepage from "./homepage/Homepage";
 import Login from './login/Login';
 import CreateStories from './CreateStories';
+import SelectedStory from './homepage/SelectedStory';
 import axios from 'axios';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/Homepage" element={<Homepage />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/CreateStories" element={<CreateStories />} />
+        <Route path="/SelectedStory" element={<SelectedStory />} />
       </Routes>
     </div>
   );

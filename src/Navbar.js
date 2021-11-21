@@ -33,9 +33,9 @@ const Navbar = () => {
     if (isLogin) {
       if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
         setUserData(JSON.parse(localStorage.getItem('SOM')));
-        navigate("/Homepage")
+        navigate("/Homepage");
       } else {
-        navigate("/")
+        navigate("/");
       }
     }
   }, [loginChange])

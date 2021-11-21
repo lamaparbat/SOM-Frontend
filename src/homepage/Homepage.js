@@ -13,12 +13,12 @@ function Homepage() {
  
  useEffect(() => {
   //redirect if login
-  const isLogin = JSON.parse(localStorage.getItem('SOM')) != null ? true : false;
-  if (isLogin) {
+   const isLogin = JSON.parse(localStorage.getItem('SOM')) != null ? true : false;
+   if (isLogin) {
    if (JSON.parse(localStorage.getItem('SOM')).check !== false) {
     navigate("/Homepage")
    } else {
-    navigate("/")
+     navigate("/")
    }
   }
  }, [])
