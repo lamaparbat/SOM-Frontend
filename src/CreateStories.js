@@ -39,15 +39,16 @@ function CreateStories() {
  const submitData = (e) => {
   e.preventDefault();
   let data = document.querySelector(".createStories .row .col-sm-10 .row .col-sm-7 #form")
+  let desc = document.querySelector(".createStories .row .col-sm-10 .row .col-sm-7 #form #description").value
   const formData = new FormData();
   formData.append("title", data.title.value);
-  formData.append("description", data.title.description);
+  formData.append("description", desc);
   formData.append("category", data.category.value);
   formData.append("language", data.language.value);
   formData.append("img", img);
   //sending data to server
   //https://ted-story.herokuapp.com/uploadProject
-  axios.post("http://localhost:5000/uploadProject", formData);
+  axios.post("https://ted-story.herokuapp.com/uploadProject", formData);
  }
 
  const change = (e) => {
@@ -81,7 +82,7 @@ function CreateStories() {
         <h5><b>Title</b></h5>
         <input className="form-control shadow-none" type="text" name="title" value={title} onChange={change} placeholder="Untitled Story" /><br />
         <h5><b>Description</b></h5>
-        <textarea className="form-control shadow-none" type="text" name="description" value={description} onChange={change} placeholder="Untitled Story" style={{ height: "200px" }} ></textarea><br />
+        <textarea className="form-control shadow-none" type="text" id="description" value={description} onChange={change} placeholder="Untitled Story" style={{ height: "200px" }} ></textarea><br />
         <h5><b>Category</b></h5>
         <select className="form-select" id="category" name="category">
          <option value="Select a category">Select a category</option>
