@@ -48,9 +48,15 @@ function CreateStories() {
   formData.append("img", img);
   //sending data to server
   //https://ted-story.herokuapp.com/uploadProject
-  axios.post("https://ted-story.herokuapp.com/uploadProject", formData);
+  axios.post("http://localhost:5000/uploadProject", formData);
+  success();
+  //reset the value
+  setImg("");
+  setDescription("");
+  setTitle("");
+  document.querySelector(".createStories .row .col-sm-10 .row .col-sm-7 #form #category").value = "Select a category";
+  document.querySelector(".createStories .row .col-sm-10 .row .col-sm-7 #form #language").value = "Select a language";
  }
-
  const change = (e) => {
   if (e.target.name === "title") {
    setTitle(e.target.value)
