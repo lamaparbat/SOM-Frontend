@@ -48,7 +48,7 @@ function CreateStories() {
   formData.append("img", img);
   //sending data to server
   //https://ted-story.herokuapp.com/uploadProject
-  axios.post("http://localhost:5000/uploadProject", formData);
+  axios.post("https://ted-story.herokuapp.com/uploadProject", formData);
   success();
   //reset the value
   setImg("");
