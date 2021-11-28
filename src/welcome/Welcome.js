@@ -78,8 +78,8 @@ function Welcome() {
             password: password,
             type: ""
           }
-          //https://ted-story.herokuapp.com/createAccount
-          axios.post('https://ted-story.web.app/createAccount', formData).then((res, err) => {
+
+          axios.post('http://localhost:5000/createAccount', formData).then((res, err) => {
             if (err) {
               console.log(err)
             } else {

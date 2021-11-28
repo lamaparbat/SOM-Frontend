@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { selectedStory } from '../../Redux/action';
+import { useDispatch } from 'react-redux';
 
 function Card(props) {
  const navigate = useNavigate();
+ const dispatch = useDispatch();
  
- const SelectedStory = () => {
-  console.log(props)
+ const SelectedStory = (props) => {
+  dispatch(selectedStory(props))
   navigate("/SelectedStory");
  }
  return (

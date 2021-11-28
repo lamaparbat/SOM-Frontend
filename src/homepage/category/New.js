@@ -8,7 +8,7 @@ function New() {
    <div className="row">
     <div className="col-sm-1"></div>
     <div className="col-sm-10  bg-">
-     <h5 className="mx-1">
+      <h4 className="mx-1 font-monospace">
       <b>New Stories</b>
       <ArrowDropDownCircleOutlined className="text-secondary loadIcon2"
        style={{
@@ -17,7 +17,7 @@ function New() {
         marginLeft:"100px",
         cursor: "pointer"
        }} />
-     </h5>
+     </h4>
      <div className="d-flex cardRows">
       <Card img={""} id={2} />
       <Card img={""} id={2} />

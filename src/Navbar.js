@@ -79,7 +79,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="container navbar py-2 bg-">
+      <div className="container navbar py-1 bg-">
         <span className="font-monospace" onClick={redirectHome}><strong>TED_STORIES</strong></span>
         <Link className="d-none redirectLogin" to="/Login" />
         <Link className="d-none redirectHome" to="/Homepage" />

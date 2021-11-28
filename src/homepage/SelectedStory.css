@@ -21,12 +21,52 @@ font-family: arial;
 font-weight: bold;
 }
 .selectedStory .row .col-sm-10 .cardDesc div div span{
- font-size: 12px;
+ font-size: 16px;
 }
 .selectedStory .row .col-sm-10 .cardDesc div div #no{
  margin-top: -10px;
 }
-
+.selectedStory .row .col-sm-10 .cardDesc div div{
+ color: rgba(65, 65, 65, 0.801);
+}
+.selectedStory .row .col-sm-10 .cardDesc div div #visibleIcon{
+  margin-top: -3px;
+  font-size: 19px;
+}
+.selectedStory .row .col-sm-10 .cardDesc div div #loveIcon{
+  margin-top: -5px;
+  font-size: 19px;
+}
+.selectedStory .row .col-sm-10 .cardDesc div div #commentIcon{
+  margin-top: -3px;
+ font-size: 14px;
+}
+.selectedStory .row .col-sm-10 .cardDesc div img{
+cursor: pointer;
+}
+.selectedStory .row .col-sm-10 .cardDesc div img:hover{
+opacity: 0.8;
+transform: scale(1.1);
+}
+.selectedStory .row .col-sm-10 .storyText{
+ padding:5px;
+ height: 90vh;
+ width: 100%;
+ overflow-y: scroll;
+}
+.selectedStory .row .col-sm-10 .storyText .text{
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.selectedStory .row .col-sm-10 .storyText::-webkit-scrollbar{
+display: none;
+}
+.selectedStory .row .col-sm-10 .storyText .commentSection .header #cmntInput{
+  height: 40px;
+  width: 100%;
+  border: 0.5px solid rgb(221, 221, 221);
+color: rgb(116, 116, 116);
+}
 @media(max-width:1100px){
 .selectedStory .row .col-sm-10 img{
   height: 100%;

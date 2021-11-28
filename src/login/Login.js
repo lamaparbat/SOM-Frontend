@@ -13,9 +13,7 @@ function Login() {
   const [result, setResult] = useState("");
   const [color, setColor] = useState("success");
 
-
   const navigate = useNavigate()
-
 
   useEffect(() => {
     

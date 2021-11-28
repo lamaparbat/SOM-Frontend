@@ -38,28 +38,16 @@ function CreateStories() {
  }
  const submitData = (e) => {
   e.preventDefault();
-  let category = document.getElementById("category").value;
-  let language = document.getElementById("language").value;
+  let data = document.querySelector(".createStories .row .col-sm-10 .row .col-sm-7 #form")
+  const formData = new FormData();
+  formData.append("title", data.title.value);
+  formData.append("description", data.title.description);
+  formData.append("category", data.category.value);
+  formData.append("language", data.language.value);
+  formData.append("img", img);
   //sending data to server
-  axios.post("https://ted-story.herokuapp.com/uploadProject", {
-   title: title,
-   description: description,
-   img: "",
-   category: category,
-   language: language,
-   author: userdata.uname,
-   views: 0,
-   likes: 0
-  }).then((response) => {
-   console.log(response)
-   success();
-   //reset the form value
-   setTitle("");
-   setDescription("");
-   setImg("");
-   $("#category").val("Select a category");
-   $("#language").val("Select a language");
-  })
+  //https://ted-story.herokuapp.com/uploadProject
+  axios.post("http://localhost:5000/uploadProject", formData);
  }
 
  const change = (e) => {
@@ -97,13 +85,20 @@ function CreateStories() {
         <h5><b>Category</b></h5>
         <select className="form-select" id="category" name="category">
          <option value="Select a category">Select a category</option>
+         <option value="Romance">Adventure</option>
+         <option value="Romance">Horror</option>
+         <option value="Romance">Paranormal</option>
+         <option value="Romance">Scifi</option>
+         <option value="Romance">Poetry</option>
          <option value="Romance">Romance</option>
-         <option value="Romance">Romance</option>
-         <option value="Romance">Romance</option>
-         <option value="Romance">Romance</option>
+         <option value="Romance">Fantasy</option>
+         <option value="Romance">Historical</option>
+         <option value="Romance">Thriller</option>
+         <option value="Romance">Short Story</option>
+   
         </select><br />
         <h5><b>Language</b></h5>
-        <select className="form-select" id="language" name="category">
+        <select className="form-select" id="language" name="language">
          <option value="Select a language">Select a Languages</option>
          <option value="English">English</option>
          <option value="Roman">Roman</option>
